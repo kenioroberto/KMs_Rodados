@@ -10,35 +10,23 @@
               <th>Local de Saida</th>
               <th>Local de destino</th>
               <th>KM Rodado</th>
+              <th>Motivo</th>
               <th>Data</th>
-				<th>Origem</th>
+				
 			 </tr>
           </thead>
           <tbody>
+            {% for trajeto in trajetos %}
             <tr>
               <td>
-                <a href="#"> Candanga</a>
+                <a href="{% url 'ver_trajeto' trajeto.id %}"> {{ trajeto.saida }} </a>
               </td>
-              <td>Mix Brasil</td>
-              <td>25</td>
-              <td>05/07/2022</td>
+              <td>{{ trajeto.destino }}</td>
+              <td>{{ trajeto.kilometragem }}</td>
+              <td>{{ trajeto.motivo }}</td>
+              <td>{{ trajeto.data_visita|date:'d/m/Y' }}</td>
             </tr>
-            <tr>
-              <td>
-                <a href="#"> Leandro</a>
-              </td>
-              <td>Moreira</td>
-              <td>35 9 8888-5555</td>
-              <td>Família</td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#"> Fátima</a>
-              </td>
-              <td>Oliveira</td>
-              <td>35 9 9999-4352</td>
-              <td>Conhecidos</td>
-            </tr>
+           {% endfor %}
           </tbody>
         </table>
 

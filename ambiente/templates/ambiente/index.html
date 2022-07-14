@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block conteudo %}
+<h4 class="mt-5">AMBIENTE DE CLIENTES</h4>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>NOME DO CLIENTE</th>
+              <th>NOME FANTASIA</th>
+              <th>ESTADO</th>
+              <th>TIPO</th>
+              
+				
+			 </tr>
+          </thead>
+          <tbody>
+            {% for ambiente in ambiente %}
+            <tr>
+              <td>
+                <a href="{% url 'ver_ambiente' ambiente.id %}"> {{ ambiente.nome }} </a>
+              </td>
+              <td>{{ ambiente.nome_fantasia }}</td>
+              <td>{{ ambiente.estado }}</td>
+              <td>{{ ambiente.tipo }}</td>
+             
+            </tr>
+           {% endfor %}
+          </tbody>
+        </table>
+
+{% endblock %}

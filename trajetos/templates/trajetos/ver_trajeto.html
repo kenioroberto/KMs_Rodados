@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block conteudo %}
+
+<h4 class="mt-5">Saindo do {{ trajeto.saida }} para {{ trajeto.destino }}</h4>
+        <dl>
+          <dt>ID</dt>
+          <dd>{{ trajeto.id }}</dd>
+
+          <dt>Local de Saida</dt>
+          <dd>{{ trajeto.saida }}</dd>
+
+          <dt>Local de destino</dt>
+          <dd>{{ trajeto.destino }}</dd>
+
+          <dt>KMs Rodados</dt>
+          <dd>{{ trajeto.kilometragem }}</dd>
+
+          <dt>Motivo</dt>
+          <dd>{{ trajeto.motivo }}</dd>
+
+          <dt>Data</dt>
+          <dd>{{ trajeto.data_visita|date:'d/m/Y' }}</dd>
+
+          <dt>Descrição</dt>
+          <dd>
+            {{ trajeto.descricao }}
+          </dd>
+        </dl>
+
+
+{% endblock %}
